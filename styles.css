@@ -1,0 +1,519 @@
+/* Modern Real Madrid Style */
+:root {
+    /* Color Palette */
+    --rm-white: #FFFFFF;
+    --rm-blue: #0055A4;  /* Vibrant Real Madrid blue */
+    --rm-gold: #FFD700;  /* Brighter gold for accents */
+    --rm-light-blue: #41B6E6;
+    --rm-dark-blue: #98adcb;
+    --rm-gray: #F5F7FA;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 85, 164, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 85, 164, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 85, 164, 0.2);
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition-medium: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 80px;
+    color: var(--rm-dark-blue);
+    background-color: var(--rm-white);
+    line-height: 1.6;
+}
+
+.madrid-font {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(197, 208, 212, 0.9) 100%),
+        url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGF6OXR4eW41ZHEyZmI5dnFhcmE1YWhtZDhmZ3dhNzRzMzVnMGJ2MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sICWuJbhHfxsUqjyNF/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rm-light-blue);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: var(--rm-gold);
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-section .subtitle {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    color: var(--rm-gold);
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+/* Section Styles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--rm-blue);
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--rm-gold);
+    border-radius: 2px;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+    background: var(--rm-white);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    font-weight: 600;
+    border-bottom: 3px solid var(--rm-gold);
+}
+
+/* Player Cards */
+.player-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition-medium);
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--rm-blue);
+    transition: var(--transition-medium);
+}
+
+.player-card:hover::before {
+    background: var(--rm-gold);
+}
+
+.player-img {
+    height: 280px;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.player-card:hover .player-img {
+    transform: scale(1.05);
+}
+
+.position-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--rm-blue);
+    color: var(--rm-white);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+.player-card .card-body {
+    padding: 1.5rem;
+    background: var(--rm-white);
+}
+
+.player-card .card-title {
+    color: var(--rm-blue);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.player-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.btn-gold {
+    background-color: var(--rm-gold);
+    color: var(--rm-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-gold:hover {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    border-color: var(--rm-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-blue {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-blue:hover {
+    background-color: var(--rm-white);
+    color: var(--rm-blue);
+    border-color: var(--rm-blue);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Stadium Section */
+.stadium-img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
+}
+
+.stadium-img-container:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.stadium-img {
+    width: 100%;
+    height: auto;
+    transition: var(--transition-slow);
+}
+
+.stadium-img-container:hover .stadium-img {
+    transform: scale(1.05);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 85, 164, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.stadium-img-container:hover .img-overlay {
+    opacity: 1;
+}
+
+/* Staff Cards */
+.staff-card {
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition-medium);
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.staff-card .card-header {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.staff-card .card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* History Cards */
+.history-card {
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition-medium);
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.history-card .card-header {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Trophy Cabinet */
+.trophy-item {
+    background: var(--rm-white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: var(--transition-medium);
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.trophy-item:hover {
+    background: rgba(0, 85, 164, 0.05);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--rm-gold);
+}
+
+.trophy-icon {
+    font-size: 2.5rem;
+    color: var(--rm-gold);
+    margin-bottom: 1rem;
+}
+
+.trophy-item h5 {
+    color: var(--rm-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.trophy-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    border-bottom: 3px solid var(--rm-gold);
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.player-stats {
+    background-color: var(--rm-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    margin-bottom: 1rem;
+}
+
+.stat-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--rm-blue), var(--rm-light-blue));
+    border-radius: 4px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    padding: 3rem 0 1.5rem;
+}
+
+footer h5 {
+    color: var(--rm-gold);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+footer a {
+    color: var(--rm-white);
+    transition: var(--transition-fast);
+    text-decoration: none;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: var(--rm-gold);
+    transform: translateX(5px);
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition-medium);
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
+    color: var(--rm-white);
+}
+
+.social-icons a:hover {
+    background: var(--rm-gold);
+    color: var(--rm-blue);
+    transform: translateY(-5px) rotate(10deg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .hero-section {
+        height: 80vh;
+        background-attachment: scroll;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-padding {
+        padding: 3rem 0;
+    }
+    
+    .player-img, .staff-card .card-img-top {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
