@@ -35,4 +35,4 @@ A responsive, feature-rich website clone showcasing Real Madrid Football Club's 
 | Version Control| Git                                   |
 
 ## 🚀 Screenshot
-![Real Madrid](127.0.0.1_5500_index.html.png)
+img/127.0.0.1_5500_index.html.png
