@@ -1,7 +1,7 @@
 # Real Madrid CF - Official Website Clone
 
 ![153-1538627_real-madrid-nome-png-transparent-png](https://github.com/user-attachments/assets/7c7f7c8c-5fb9-4517-8e80-94b6c983d3d5)
-
+ 
 
 
 A responsive, feature-rich website clone showcasing Real Madrid Football Club's history, squad, stadium, and achievements.
