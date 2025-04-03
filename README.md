@@ -37,6 +37,8 @@ A responsive, feature-rich website clone showcasing Real Madrid Football Club's 
 | Version Control| Git                                   |
 
 ## 🚀 Screenshot
-![127 0 0 1_5500_index html](https://github.com/user-attachments/assets/9b95bd62-6c26-4678-bd88-305388d20097)
+![127 0 0 1_5500_index html](https://github.com/user-attachments/assets/16a2a4b3-1ce2-4f69-bcfa-14c5e06ca38d)
+
+
 
 ## Website Link: https://real-madrid-cf-clone.netlify.app/
