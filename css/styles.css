@@ -1,0 +1,720 @@
+:root {
+    /* Enhanced Color Palette */
+    --rm-white: #FFFFFF;
+    --rm-blue: #0055A4;
+    --rm-dark-blue: #003366;
+    --rm-gold: #FFD700;
+    --rm-light-gold: #FFEEAA;
+    --rm-light-blue: #41B6E6;
+    --rm-gray: #F5F7FA;
+    --rm-dark-gray: #333333;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 85, 164, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 85, 164, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 85, 164, 0.2);
+    --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.3);
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition-medium: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 80px;
+    color: var(--rm-dark-gray);
+    background-color: var(--rm-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.madrid-font {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Container adjustments */
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(187, 189, 194, 0.9) 0%, rgba(18, 17, 21, 0.9) 100%),
+        url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGF6OXR4eW41ZHEyZmI5dnFhcmE1YWhtZDhmZ3dhNzRzMzVnMGJ2MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sICWuJbhHfxsUqjyNF/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rm-light-blue);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--rm-gold);
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+    line-height: 1.1;
+}
+
+.hero-section .subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    color: var(--rm-gold);
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--rm-blue);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--rm-gold);
+    border-radius: 2px;
+}
+
+/* History Cards */
+.history-card {
+    border: 1px solid rgba(0, 85, 164, 0.1);
+    transition: var(--transition-medium);
+    margin-bottom: 2rem;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.history-card .card-header {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Trophy Cabinet - Improved */
+.trophy-cabinet {
+    background: linear-gradient(135deg, var(--rm-dark-blue) 0%, var(--rm-blue) 100%);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.trophy-cabinet-header {
+    background-color: transparent;
+    border-bottom: 2px solid var(--rm-gold);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.trophy-cabinet-title {
+    color: var(--rm-white);
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+.trophy-cabinet-body {
+    padding: 2rem;
+}
+
+.trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.trophy-item {
+    padding: 1.25rem;
+    transition: var(--transition-medium);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trophy-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.trophy-img {
+    height: 70px;
+    width: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+    transition: var(--transition-medium);
+}
+
+.trophy-item:hover .trophy-img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
+}
+
+.trophy-count {
+    color: var(--rm-gold);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.trophy-name {
+    color: var(--rm-white);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.trophy-year {
+    color: var(--rm-light-gold);
+    font-size: 0.8rem;
+    margin-top: auto;
+    opacity: 0.9;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color: rgb(106 110 114 / 75%) !important
+}
+
+/* Stadium Section */
+.stadium-img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-medium);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stadium-img-container:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.stadium-img {
+    width: 100%;
+    height: auto;
+    transition: var(--transition-slow);
+    display: block;
+}
+
+.stadium-img-container:hover .stadium-img {
+    transform: scale(1.05);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 85, 164, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-medium);
+}
+
+.stadium-img-container:hover .img-overlay {
+    opacity: 1;
+}
+
+/* Players Section */
+#players {
+    background: linear-gradient(to bottom, var(--rm-white) 0%, var(--rm-gray) 100%);
+}
+
+.player-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--rm-white);
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--rm-blue);
+    transition: var(--transition-medium);
+    z-index: 1;
+}
+
+.player-card:hover::before {
+    background: var(--rm-gold);
+}
+
+.player-img {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.player-card:hover .player-img {
+    transform: scale(1.05);
+}
+
+.position-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--rm-blue);
+    color: var(--rm-white);
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+.player-card .card-body {
+    padding: 1.5rem;
+    background: var(--rm-white);
+    text-align: center;
+}
+
+.player-card .card-title {
+    color: var(--rm-blue);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.player-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Staff Section */
+.staff-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+    max-width: 350px;
+    margin: 0 auto;
+    background: var(--rm-white);
+    height: 100%;
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.staff-card .card-header {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    border-bottom: 2px solid var(--rm-gold);
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.staff-card .card-img-top {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.staff-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.staff-card .card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition-fast);
+    border: 2px solid transparent;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.btn-gold {
+    background-color: var(--rm-gold);
+    color: var(--rm-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-gold:hover {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    border-color: var(--rm-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin: 0 auto;
+}
+
+.modal-header {
+    background-color: var(--rm-blue);
+    color: var(--rm-white);
+    border-bottom: 2px solid var(--rm-gold);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.modal-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--rm-dark-blue) 0%, var(--rm-blue) 100%);
+    color: var(--rm-white);
+    padding: 3rem 0 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--rm-gold);
+}
+
+footer .container {
+    max-width: 1200px;
+}
+
+footer h5 {
+    color: var(--rm-gold);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+}
+
+footer a {
+    color: var(--rm-white);
+    transition: var(--transition-fast);
+    text-decoration: none;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: var(--rm-gold);
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition-medium);
+    font-size: 1.1rem;
+    color: var(--rm-white);
+}
+
+.social-icons a:hover {
+    background: var(--rm-gold);
+    color: var(--rm-blue);
+    transform: translateY(-5px) rotate(10deg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+    
+    .player-img, .staff-card .card-img-top {
+        height: 260px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+    }
+    
+    .section-title {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .history-card-header {
+        font-size: 1.2rem;
+    }
+    
+    .trophy-img {
+        height: 60px;
+    }
+    
+    .trophy-count {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section {
+        height: 80vh;
+        background-attachment: scroll;
+        background-position: 60% center;
+    }
+    
+    .history-card-body::before {
+        width: 3px;
+    }
+    
+    .trophy-item {
+        padding: 15px 10px;
+    }
+    
+    .trophy-img {
+        height: 50px;
+    }
+    
+    .trophy-count {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 70vh;
+    }
+    
+    .history-card {
+        border-radius: var(--radius-sm);
+    }
+    
+    .history-card-body::before {
+        width: 2px;
+    }
+    
+    .trophy-item {
+        padding: 12px 8px;
+    }
+    
+    .trophy-img {
+        height: 40px;
+    }
+    
+    .trophy-count {
+        font-size: 1.3rem;
+    }
+    
+    .trophy-name {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .history-card-header {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+    
+    .trophy-item {
+        padding: 10px 5px;
+    }
+    
+    .trophy-img {
+        height: 35px;
+    }
+    
+    .trophy-count {
+        font-size: 1.2rem;
+    }
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus styles for better accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--rm-gold);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        padding-top: 0;
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .hero-section,
+    footer,
+    .navbar {
+        display: none;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
